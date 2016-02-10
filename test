@@ -1,0 +1,41 @@
+@Test(testName="Company Users Tests", description="Test Company Functionality not to add more users than seats", priority=0)
+    public void companyUsersTest() throws Exception {
+        adminUser.ensureConnected();
+        checkAndCreateTestUser(testUser);
+        testUser.ensureConnected();
+        String key = testUser.getPublishableKey();
+        String stripeToken = StripeClient.getStripeClient().getTestCreditToken(key, testUser.getClient()).getString("id");
+        BTBillingAccountParams accountParams = BTBillingAccountParams.builder()
+                .withAddress(getTestAddress())
+                .withPlanId(AutoBillingPlanId.PRO_MONTHLY.toString())
+                .withSeats(2)
+                .withCompanyName("ABC")
+                .withUserId(testUser.getId())
+                .withCompanyPlan(true)
+                .withToken(stripeToken)
+                .build();
+
+        AutoAccount testAccount = AutoAccount.create(testUser, accountParams);
+        testAccount.read(testUser);
+        checkAndCreateTestUser(testUser2);
+        checkAndCreateTestUser(testUser3);
+        testUser3.ensureConnected();
+        List<AutoCompany> companyList = AutoCompany.listCompanies(testUser);
+        OSReporter.assertEquals(companyList.size(), 1);
+        testCompany = companyList.get(0);
+        OSReporter.info("Company Name --> " + testCompany.getName());
+        testCompany.addMember(testUser, testUser2);
+        testUser2.ensureConnected();
+        testUser2.read();
+        OSReporter.assertEquals(testUser2.getActivePlanId(), AutoBillingPlanId.PRO_MONTHLY.toString());
+        try {
+            testCompany.addMember(testUser, testUser3);
+            OSReporter.fail("Expected adding 3rd member to fail");
+        } catch (WebApplicationException ex) {
+            OSReporter.assertEquals(ex.getResponse().getStatus(), 413, "Expected 413");
+        }
+        testUser2.read();
+        OSReporter.assertEquals(Integer.valueOf(testCompany.getMembers(testUser).size()).longValue(), testAccount.getSeats(), "Expected to have two users in Company");
+
+
+    }
