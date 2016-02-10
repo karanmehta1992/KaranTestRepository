@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><elements>
+<element id="d414f436948e79a9c81b7049" microversion="e4420ccc55c3081e36ce861e" type="CONTAINER" upgradeTaskVersion="298" minModelingVersion="298" name="FeatureStudioTest" elementData="">
+<data type="DOCUMENT_DATA"><![CDATA[{
+  "type" : 361,
+  "message" : {
+    "defaultUnits" : {
+      "type" : 160,
+      "message" : {
+        "units" : [ {
+          "key" : 3,
+          "value" : "inch"
+        }, {
+          "key" : 4,
+          "value" : "degree"
+        }, {
+          "key" : 5,
+          "value" : "pound"
+        } ],
+        "nodeId" : "MohbRHAR4FlsiFy0O"
+      }
+    },
+    "elements" : [ {
+      "type" : 362,
+      "message" : {
+        "elementId" : "4b2385a13e538c3147c18f33",
+        "microversion" : {
+          "type" : 366,
+          "message" : {
+            "theId" : "29784a0cc721f2cf3f641a98"
+          }
+        },
+        "type" : 0,
+        "name" : "Part Studio 1",
+        "dataType" : "onshape/partstudio",
+        "nodeId" : "AlbO7YMl9v+rdjiB"
+      }
+    }, {
+      "type" : 362,
+      "message" : {
+        "elementId" : "19d4ff7fd2023bf9bfb4324b",
+        "microversion" : {
+          "type" : 366,
+          "message" : {
+            "theId" : "18b82185cbc35dca9db05f2e"
+          }
+        },
+        "type" : 3,
+        "name" : "Feature Studio 1",
+        "dataType" : "onshape/featurestudio",
+        "nodeId" : "52adFHp6Ksi3EikS"
+      }
+    }, {
+      "type" : 362,
+      "message" : {
+        "elementId" : "9ce5aa697461b4b0d1ffa025",
+        "microversion" : {
+          "type" : 366,
+          "message" : {
+            "theId" : "a798d7bb3ecdf067c197a881"
+          }
+        },
+        "type" : 1,
+        "name" : "Assembly 1",
+        "dataType" : "onshape/assembly",
+        "nodeId" : "9aF2MCHY6VQhZRat"
+      }
+    } ],
+    "featureScriptUpgradeVersion" : "298.0",
+    "nodeId" : "XvMUGiHsYzGh+6iW"
+  }
+}]]></data>
+</element>
+<element id="4b2385a13e538c3147c18f33" microversion="29784a0cc721f2cf3f641a98" type="PARTSTUDIO" name="Part Studio 1" elementData="">
+<data type="BELSCRIPT"><![CDATA[FeatureScript 298;
+import(path : "onshape/std/geometry.fs", version : "298.0");
+GPVUPKSfCXEEHH::import(path : "19d4ff7fd2023bf9bfb4324b", version : "18b82185cbc35dca9db05f2e");
+
+annotation { "Default Units" : ["degree", "inch", "pound"] }
+export function main()
+{
+    return build();
+}
+
+export function build()
+{
+    const context is Context = newContextWithDefaults(inch);
+    const id is Id = newId();
+    const lookup is function = makeLookupFunction(context, id);
+    return context;
+}
+]]></data>
+</element>
+<element id="19d4ff7fd2023bf9bfb4324b" microversion="18b82185cbc35dca9db05f2e" type="FEATURESTUDIO" name="Feature Studio 1" elementData="{   &quot;type&quot; : 1754,   &quot;message&quot; : {     &quot;workspaceToEditMicrobranch&quot; : [ {       &quot;key&quot; : &quot;d414f436948e79a9c81b7049&quot;,       &quot;value&quot; : {         &quot;type&quot; : 364,         &quot;message&quot; : {           &quot;theId&quot; : &quot;dd4977f0e946919b2064c169&quot;         }       }     } ],     &quot;id&quot; : &quot;19d4ff7fd2023bf9bfb4324b&quot;,     &quot;elementId&quot; : &quot;19d4ff7fd2023bf9bfb4324b&quot;,     &quot;documentId&quot; : &quot;450b53e24f283ca07675521f&quot;   } }">
+<data type="BELSCRIPT_DATA"><![CDATA[$FeatureScript 298;
+import(path : "onshape/std/geometry.fs", version : "298.0");
+
+]]></data>
+</element>
+<element id="9ce5aa697461b4b0d1ffa025" microversion="a798d7bb3ecdf067c197a881" type="ASSEMBLY" name="Assembly 1" elementData="">
+<data type="ASSEMBLY_DATA"><![CDATA[{
+  "type" : 1061,
+  "message" : {
+    "defaultUnits" : {
+      "type" : 160,
+      "message" : {
+        "units" : [ {
+          "key" : 3,
+          "value" : "inch"
+        }, {
+          "key" : 4,
+          "value" : "degree"
+        }, {
+          "key" : 5,
+          "value" : "pound"
+        } ],
+        "sourceParseTreeNodes" : [ {
+          "key" : 2,
+          "value" : [ {
+            "type" : 21,
+            "message" : {
+              "nodeId" : "PFb7mMLIWyOP+Oa1b"
+            }
+          } ]
+        }, {
+          "key" : 11,
+          "value" : [ {
+            "type" : 21,
+            "message" : {
+              "nodeId" : "Pgz8v7znCheKyYuhz"
+            }
+          } ]
+        } ],
+        "nodeId" : "M2K8/NEZ3bSSdGODG"
+      }
+    },
+    "occurrenceData" : [ {
+      "type" : 75,
+      "message" : {
+        "occurrence" : {
+          "type" : 74,
+          "message" : { }
+        },
+        "transform" : {
+          "type" : 386,
+          "message" : {
+            "m00" : 1.0,
+            "m11" : 1.0,
+            "m22" : 1.0
+          }
+        },
+        "nodeId" : "RootOccurrenceDataId"
+      }
+    } ],
+    "nodeId" : "m926PUNf5bc20VWU"
+  }
+}]]></data>
+</element>
+</elements>
