@@ -1,0 +1,130 @@
+14:47:37.616 [main] DEBUG c.o.a.r.f.Slf4JFrameworkReporterListener - Init
+14:47:37.979 [main] INFO  c.o.automation.util.TestProperties - loading local properties from 
+14:47:37.999 [main] DEBUG o.a.c.c.PropertiesConfiguration - Base path set to file:///Users/kmehta/repos/test-automation/os_testng/testcases-onshape/local.props
+14:47:38.122 [main] INFO  c.o.automation.util.TestProperties - loading default properties from 
+14:47:38.123 [main] DEBUG o.a.c.c.PropertiesConfiguration - Base path set to file:///Users/kmehta/repos/test-automation/os_testng/testcases-onshape/src/dist/conf/defaults.props
+14:47:38.142 [main] DEBUG c.o.a.r.Slf4JReporterListener - Init
+[TestNG] Running:
+  /private/var/folders/dc/vt9x02hn3rn3h074zkrfhypw0000gn/T/testng-eclipse--472497702/testng-customsuite.xml
+
+14:47:38.466 [main] DEBUG c.o.a.r.FrameworkISuiteListener - onStart -- suite name: Default suite, invoked: 1
+14:47:38.580 [main] DEBUG c.o.a.f.AutomationSuiteFactory - Created new suite Default suite=com.onshape.automation.framework.AutomationSuiteImpl@4c6e276e[name=Default suite,startDate=Tue Jan 26 14:47:38 EST 2016,endDate=<null>,outputDirectory=<null>,host=<null>]
+14:47:38.585 [main] DEBUG c.o.a.r.FrameworkISuiteListener - getExecAddress: Getting ips
+14:47:38.591 [main] DEBUG c.o.a.r.Slf4JReporterListener - Starting suite Default suite
+14:47:38.598 [main] DEBUG c.o.a.reporting.XmlReporterListener - startSuite XML
+14:47:38.615 [main] DEBUG c.o.a.reporting.XmlReporterListener - Writing xml file for com.onshape.automation.framework.AutomationSuiteImpl@4c6e276e[name=Default suite,startDate=Tue Jan 26 14:47:38 EST 2016,endDate=<null>,outputDirectory=/Users/kmehta/repos/test-automation/os_testng/testcases-onshape/test-output/Default suite,host=Karans-MacBook-Pro.local (fe80:0:0:0:4ca4:56ff:fee6:a4ed%awdl0)] to /Users/kmehta/repos/test-automation/os_testng/testcases-onshape/test-output/Default suite/suite-output.xml
+14:47:38.778 [main] INFO  c.o.automation.tests.OnshapeRootTest - Adding onshapeclient debug reporter
+Logging rest calls to /Users/kmehta/repos/test-automation/os_testng/testcases-onshape/test-output/Default suite/rest-output.log
+14:47:40.182 [main] DEBUG c.o.automation.model.ModelObjectImpl - created=com.onshape.automation.rest.model.AutoUser@2de56eb2[adminUser=<null>,client=java.lang.ThreadLocal@5745ca0e,password=<null>,loginCount=0,signingUp=false,autoAccount=<null>,initEmail=<null>,appClient=java.lang.ThreadLocal@3ad83a66,appStoreTemplate=<null>,mo=<null>,appstoreLoginCount=0,template=<null>,description_=<null>,createdAt_=<null>,lastLoginTime_=<null>,activePlanId_=FREE,systemUser_=false,eulaRequired_=false,eulaId_=<null>,totpEnabled_=false,accountLimits_=<null>,defaultCompanyName_=<null>,accounts_=<null>,billingUpdateRequired_=false,forumId_=<null>,role_=0,roles_=<null>,deviceInfo_=<null>,campaign_=<null>,firstName_=<null>,lastName_=<null>,email_=<null>,state_=0,image_=<null>,id_=<null>,name_=<null>,href_=<null>]
+14:47:40.464 [main] DEBUG c.o.automation.rest.model.AutoUser - User btadmin@onshape.com isn't logged in, so login
+14:47:40.475 [main] DEBUG c.o.automation.rest.model.AutoUser - Logging in btadmin@onshape.com
+14:47:40.498 [main] DEBUG c.o.a.rest.client.OnshapeClient - Getting new client@http://localhost:8080/api (oauth=false, long=false, details=btadmin@onshape.com)
+Jan 26, 2016 2:47:45 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: NEWTON-REST-1 (tid:1) [main] * Sending client request on thread main
+NEWTON-REST-1 (tid:1) [main] > POST http://localhost:8080/api/users/session
+NEWTON-REST-1 (tid:1) [main] > Accept: application/json
+NEWTON-REST-1 (tid:1) [main] > Content-Type: application/json
+NEWTON-REST-1 (tid:1) [main] > X-Automation-Time: 1453837664735
+NEWTON-REST-1 (tid:1) [main] > X-Automation-User: btadmin@onshape.com
+{"randomToken":null,"totp":null,"rememberTotp":false,"webClientCapabilities":null,"deviceId":null,"email":"btadmin@onshape.com","password":"_REDACTED_"}
+
+Jan 26, 2016 2:47:47 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: NEWTON-REST-1 (tid:1) [main] * Client response received on thread main took 3176ms
+NEWTON-REST-1 (tid:1) [main] < 200
+NEWTON-REST-1 (tid:1) [main] < Content-Length: 1839
+NEWTON-REST-1 (tid:1) [main] < Content-Type: application/json;charset=UTF-8
+NEWTON-REST-1 (tid:1) [main] < Set-Cookie: XSRF-TOKEN-104369089=yYSB+fSTIxyAZoYQSH/z9Q==;Path=/,on=l7SsBDR/NkTnLdnWXn70fInglUjJlFVaBGRXuPi3iC7C/jDVYK3Pvn+xNvQbD+Kupui8IjkbkwItHtI1Cs3IPUV741WlAh6sMvZA5+lo3+Yeu+8AfeP9Zbx0HOtBztkecB5RhGOu9mVq13+406S9/QKMoT7aY4c3CDGPYiWYTCN4Td7Vzl1kyfFvGt2TgAjFGicjuGtbdN3sukX8Ob62CxDzxFzX5eQ+0ORYuMrFPcYP9s4JU+3/A+ssch2ihGnYYotAFGux3YEyDQGxT+50C/smu9lLcde+E8rd2hU2lnFX1/VpNG50EFK5XIdnpwNbtejhEM+f6DAZ1RD8ap9+TCHziD9joEA=;Path=/;HttpOnly
+{
+  "createdAt" : "2016-01-20T15:37:27.656+0000",
+  "deviceInfo" : null,
+  "lastLoginTime" : "2016-01-26T19:47:47.071+0000",
+  "accountLimits" : {
+    "storageBytes" : 107374182400,
+    "privateDocumentLimit" : -1,
+    "privateDocumentStorageBytes" : 107374182400,
+    "starLimit" : -1
+  },
+  "eulaRequired" : false,
+  "eulaId" : "569fa0fb4568c79bdc1a1855",
+  "campaign" : null,
+  "forumId" : "Admin",
+  "totpEnabled" : false,
+  "role" : 0,
+  "systemUser" : true,
+  "activePlanId" : "BUSINESS_YEARLY",
+  "accounts" : [ {
+    "state" : 6,
+    "seats" : 1000,
+    "planId" : "BUSINESS_YEARLY",
+    "customerId" : null,
+    "accountOwner" : {
+      "state" : 1,
+      "image" : "/images/placeholder-user.png",
+      "email" : "btadmin@onshape.com",
+      "firstName" : "Admin",
+      "lastName" : "User",
+      "name" : "Admin",
+      "id" : "569e713845689763f6182a75",
+      "href" : "http://localhost:8080/api/users/569e713845689763f6182a75"
+    },
+    "companySummaryInfo" : {
+      "image" : "/images/belmonttech-footer_icon.png",
+      "description" : null,
+      "admin" : true,
+      "name" : "Onshape",
+      "id" : "569e713845689763f6182a7b",
+      "href" : "http://localhost:8080/api/companies/569e713845689763f6182a7b"
+    },
+    "owner" : true,
+    "companyPlan" : true,
+    "name" : "Onshape account",
+    "id" : "569e713845689763f6182a7d",
+    "href" : "http://localhost:8080/api/accounts/569e713845689763f6182a7d"
+  } ],
+  "description" : "Admin user",
+  "billingUpdateRequired" : false,
+  "defaultCompanyName" : null,
+  "roles" : [ "ADMIN", "DEVELOPER" ],
+  "state" : 1,
+  "image" : "/images/placeholder-user.png",
+  "email" : "btadmin@onshape.com",
+  "firstName" : "Admin",
+  "lastName" : "User",
+  "name" : "Admin",
+  "id" : "569e713845689763f6182a75",
+  "href" : "http://localhost:8080/api/users/569e713845689763f6182a75"
+}
+
+Jan 26, 2016 2:47:48 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: NEWTON-REST-2 (tid:1) [main] * Sending client request on thread main
+NEWTON-REST-2 (tid:1) [main] > GET http://localhost:8080/api/clientinfo/xsrf
+NEWTON-REST-2 (tid:1) [main] > Accept: application/json
+NEWTON-REST-2 (tid:1) [main] > Cookie: on=l7SsBDR/NkTnLdnWXn70fInglUjJlFVaBGRXuPi3iC7C/jDVYK3Pvn+xNvQbD+Kupui8IjkbkwItHtI1Cs3IPUV741WlAh6sMvZA5+lo3+Yeu+8AfeP9Zbx0HOtBztkecB5RhGOu9mVq13+406S9/QKMoT7aY4c3CDGPYiWYTCN4Td7Vzl1kyfFvGt2TgAjFGicjuGtbdN3sukX8Ob62CxDzxFzX5eQ+0ORYuMrFPcYP9s4JU+3/A+ssch2ihGnYYotAFGux3YEyDQGxT+50C/smu9lLcde+E8rd2hU2lnFX1/VpNG50EFK5XIdnpwNbtejhEM+f6DAZ1RD8ap9+TCHziD9joEA=;XSRF-TOKEN-104369089=yYSB+fSTIxyAZoYQSH/z9Q==
+NEWTON-REST-2 (tid:1) [main] > X-Automation-Time: 1453837668517
+NEWTON-REST-2 (tid:1) [main] > X-Automation-User: btadmin@onshape.com
+
+Jan 26, 2016 2:47:48 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: NEWTON-REST-2 (tid:1) [main] * Client response received on thread main took 148ms
+NEWTON-REST-2 (tid:1) [main] < 200
+NEWTON-REST-2 (tid:1) [main] < Content-Length: 93
+NEWTON-REST-2 (tid:1) [main] < Content-Type: application/json;charset=UTF-8
+NEWTON-REST-2 (tid:1) [main] < Set-Cookie: XSRF-TOKEN-104369089=yYSB+fSTIxyAZoYQSH/z9Q==;Path=/,on=d6tbNU8BQ+nrmBh1Iyu/4bSfQfgyG9/unzBo+9F8EMGIgXluxOQ8DOJk9L2pCcTNggwgSO4xgnb7J2QN13dBt9YQ3Wdctd+3E4yPro0M75yiOmuYKn9rMHOURG3pMrAZhRorb2HmypxkU0FpB9OZf17+kIOUR7NlnW6sxwS+to3D+x2mMMMfrFoZHrDGdsCZ2G8fzKZFClf0KCl5ou6n7FzNcrQ6JWOfuvwTApF91I+33VJAwSkuxcD6azoDhixpzlRhWde6BeNgnP3Umk06SrrfNSHP40zMADudFcc2sgPbrB24m1QUrUaSFZ45iBdz7cmZjzV6vUUIF3TgQSzneKoI6XPVlK0=;Path=/;HttpOnly
+{
+  "xsrfHeaderName" : "X-XSRF-TOKEN-104369089",
+  "xsrfTokenName" : "XSRF-TOKEN-104369089"
+}
+
+14:47:48.700 [main] DEBUG c.o.automation.rest.model.AutoUser - User btadmin@onshape.com is already connected
+14:47:48.703 [main] DEBUG c.o.automation.rest.model.AutoUser - User btadmin@onshape.com is already connected
+14:47:48.712 [main] INFO  c.o.a.r.c.OnshapeClientReporterListener - Using logId 00000zLJFXV for onshape logging
+Jan 26, 2016 2:47:48 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: Not logging call NEWTON-REST-3
+14:47:48.964 [main] DEBUG c.o.a.r.FrameworkITestListener - onStart :: name: Default test
+14:47:49.156 [TestNG-1] DEBUG c.o.a.r.FrameworkITestListener - onTestStart :: method: testBlobData, instance: TestNG-1
+14:47:49.160 [TestNG-1] DEBUG c.o.a.f.AutomationTestFactory - createTest: method: public void com.onshape.automation.testcases.BlobDataTest.testBlobData() throws java.lang.Exception, threadId: 1
+14:47:49.219 [TestNG-1] DEBUG c.o.a.r.FrameworkITestListener - TEST REPORT OUTPUT :: 
+14:47:49.231 [TestNG-1] INFO  c.o.a.r.Slf4JReporterListener - Start Test Test Blob data generation
+14:47:49.235 [TestNG-1] DEBUG c.o.a.reporting.XmlReporterListener - Writing xml file for com.onshape.automation.framework.AutomationTestImpl@847f3e7[name=Test Blob data generation,description=Verify that blob 98 mb data is generated,parentSuite=Default suite,class=com.onshape.automation.testcases.BlobDataTest,method=testBlobData,threadId=1,result=RUNNING,start=Tue Jan 26 14:47:49 EST 2016] to /Users/kmehta/repos/test-automation/os_testng/testcases-onshape/test-output/Default suite/Test Blob data generation/test-output.xml
+14:47:49.243 [TestNG-1] DEBUG c.o.automation.rest.model.AutoUser - User btadmin@onshape.com is already connected
+Jan 26, 2016 2:47:49 PM com.onshape.automation.util.rest.AutoLoggingFilter log
+INFO: Not logging call NEWTON-REST-4
