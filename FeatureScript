@@ -1,0 +1,56 @@
+FeatureScript 298;
+import(path : "onshape/std/geometry.fs", version : "298.0");
+
+annotation { "Feature Type Name" : "FeatureScriptDemo1" }
+export const myFeature = defineFeature(function(context is Context, id is Id, definition is map)
+    precondition
+    {
+        // Define the parameters of the feature type
+        annotation { "Name" : "My Length" }
+        isLength(definition.length, LENGTH_BOUNDS);
+        
+        annotation { "Name1" : "My Length" }
+        isLength(definition.radius, LENGTH_BOUNDS);
+        
+        
+    }
+    {
+        
+        
+        var sketch1 = newSketch(context, id + "sketch1", {
+                "sketchPlane" : qCreatedBy(makeId("Top"), EntityType.FACE)
+        });
+        // Create sketch entities here
+        
+        skRectangle(sketch1, "rectangle1", {
+                "firstCorner" : vector(0, 0) * inch,
+                "secondCorner" : vector(definition.length, definition.length)
+        });
+        
+       
+        skCircle(sketch1, "circle1", {
+                "center" : vector(definition.length / 2, definition.length / 2),
+                "radius" : 1 * definition.radius
+        });
+        
+        
+        skSolve(sketch1);
+        
+        
+        extrude(context, id + "extrude1", {
+                "entities" : qSketchRegion(id + "sketch1"),
+                "endBound" : BoundingType.BLIND,
+                "depth" : definition.length
+        });
+        
+        
+        deleteBodies(context, id + "delete1", {
+          "entities" : qCreatedBy(id + "sketch1", EntityType.BODY) 
+        });
+        
+        
+        
+        
+
+        
+    }, { /* default parameters */ });
